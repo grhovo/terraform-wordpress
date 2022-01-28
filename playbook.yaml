@@ -1,5 +1,5 @@
 - hosts: tag_Type_web
   roles:
-    - nginx
-    - wordpress
+    - nginx-ansible-role
+    - wordpress-ansible-role
 

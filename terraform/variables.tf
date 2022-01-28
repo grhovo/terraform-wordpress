@@ -3,17 +3,15 @@ variable "vpc_block" {
   description = "Ip address range for vpc"
 }
 
-variable "subnet_block_1" {
-  type        = string
-  description = "Ip address range for subnet"
+variable "subnet_blocks" {
+  type        = list(string)
+  description = "Ip address range for subnets"
 }
-variable "subnet_block_2" {
-  type        = string
-  description = "Ip address range for subnet"
-}
-variable "subnet_block_3" {
-  type        = string
-  description = "Ip address range for subnet"
+
+variable "availability_zones" {
+  type = list(string)
+  description = "The AZ for the subnet"
+  default = null
 }
 
 variable "all_ips" {
@@ -68,6 +66,10 @@ variable "db_instance_type" {
 variable "storage" {
   type        = string
   description = "Database size"
+}
+variable "subnet_group_name" {
+  type = string
+  description = "Database subnet group name"
 }
 variable "wordpress_pub_key" {
   type = string

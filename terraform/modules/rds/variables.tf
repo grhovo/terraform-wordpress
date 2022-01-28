@@ -26,3 +26,12 @@ variable "security_group_db" {
   type = list(string)
   description = "Database subnet"
 }
+variable "subnet_group_name" {
+  type = string
+  description = "Database subnet group name"
+}
+variable "engine" {
+  type = string
+  description = "The database engine to use."
+  default = "mysql"
+}
