@@ -43,7 +43,7 @@ resource "aws_security_group" "for_instance" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.wordpress_vpc.cidr_block]
+    cidr_blocks = var.all_ips
   }
   ingress {
     description = "ssh"
@@ -64,29 +64,6 @@ resource "aws_security_group" "for_instance" {
   }
 }
 
-resource "aws_security_group" "for_lb" {
-  name        = "for-lb"
-  description = "Allow http from all world"
-  vpc_id      = aws_vpc.wordpress_vpc.id
-
-  ingress {
-    description = "http"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = var.all_ips
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = var.all_ips
-  }
-  tags = {
-    Type  = "web"
-    Owner = "wordpress"
-  }
-}
 
 resource "aws_security_group" "for_db" {
   name        = "for-db"
@@ -97,6 +74,13 @@ resource "aws_security_group" "for_db" {
     description = "msyql"
     from_port   = 3306
     to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = var.all_ips
+  }
+  ingress {
+    description = "ssh"
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = var.all_ips
   }

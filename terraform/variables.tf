@@ -1,3 +1,4 @@
+###Network variables
 variable "vpc_block" {
   type        = string
   description = "Ip address range for vpc"
@@ -9,16 +10,16 @@ variable "subnet_blocks" {
 }
 
 variable "availability_zones" {
-  type = list(string)
+  type        = list(string)
   description = "The AZ for the subnet"
-  default = null
+  default     = null
 }
 
 variable "all_ips" {
   type        = list(string)
   description = "all IP addreses"
 }
-
+##EC2 variables
 variable "image_type" {
   type        = string
   description = "Image id for wordpress"
@@ -29,49 +30,38 @@ variable "instance_type" {
   description = "Instance type"
 }
 
-variable "desired_capacity" {
-  type        = number
-  description = "Desired capacity of asg"
+variable "key_name" {
+  type        = string
+  description = "Key for this instance, if it already exists"
+  default     = null
 }
 
-variable "min_size" {
-  type        = number
-  description = "Minimum capacity of asg"
-}
 
-variable "max_size" {
-  type        = number
-  description = "Maximum capacity of asg"
-}
+###Key pair variables
 variable "key_wordpress_name" {
   type        = string
   description = "Key name"
 }
-variable "dbname" {
-  type        = string
-  description = "Database name"
-}
-variable "username" {
-  type        = string
-  description = "Database username"
-}
-variable "password" {
-  type        = string
-  description = "Database password"
-}
-variable "db_instance_type" {
-  type        = string
-  description = "Database instance compute size"
-}
-variable "storage" {
-  type        = string
-  description = "Database size"
-}
-variable "subnet_group_name" {
-  type = string
-  description = "Database subnet group name"
-}
+
 variable "wordpress_pub_key" {
-  type = string
+  type        = string
   description = "Public key for remote connection"
+}
+
+
+
+#Tags
+variable "tag_type" {
+  type        = list(string)
+  description = "Type of the instance"
+}
+
+variable "tag_owner" {
+  type        = string
+  description = "Owner of the instance"
+}
+
+variable "tag_inumber" {
+  type        = list(string)
+  description = "Unique ID of instance"
 }

@@ -2,4 +2,6 @@
   roles:
     - nginx-ansible-role
     - wordpress-ansible-role
-
+- hosts: tag_Type_db
+  roles:
+    - mariadb-ansible-role
