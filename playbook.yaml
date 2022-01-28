@@ -1,0 +1,5 @@
+- hosts: tag_Type_web
+  roles:
+    - nginx
+    - wordpress
+
