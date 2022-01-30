@@ -7,6 +7,6 @@ resource "local_file" "wp-config" {
   db_address=aws_db_instance.wordpress_rds.address
  }
  )
- filename = "../wordpress/templates/wp-config.php"
+ filename = "../wordpress-ansible-role/templates/wp-config.php"
 }
 

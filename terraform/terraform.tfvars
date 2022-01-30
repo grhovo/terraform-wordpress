@@ -15,7 +15,7 @@ instance_type      = "t2.micro"
 
 #DB parameters
 storage            = 10
-db_instance_type   = "db.t3.micro"
+db_instance_type   = "db.t2.small"
 dbname             = "wordpress_db"
 username           = "wordpress_user"
 password           = "my_password"
@@ -23,4 +23,4 @@ subnet_group_name  = "db_subnet"
 
 #Key pair for instance
 key_wordpress_name = "wordpress-key"
-wordpress_pub_key  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDttgZi2sk4uN6ErZIeNnVLDo7WP3GGBWFLHs6mQmLlMAzOymgKdorTEQb7/fCy2jyUlb8RNE1csbLVeNis6lf0P9IAsvLK4e77m1u6oDV/e5QK4XDctjDDzEQY1w5bjBWofyeOVANyFZcTayun8dsbT6welvcIJriPrKYrwPQcVB+PUbb6lTKJay/7z8RykkAZnyILEYjbpIOccLaTgO3j4o8Qqwvdfkf8stij67AbQqGPy3D48WOlQOVd/qtiI/BIj5lK06qDFjine6/T/CFJHzS3kbAzC2yBZsHoHRH2Pj+BcnL9GENnCDJd7oGhNayovV364nV9aXZ9p2fHk1tZKwYvsApeMRsJRevPfLIlNA+iwORUAhuLw8kCOcv89qKVMPRm1Nql7Ot3bzhn5HoQauCgvllARGMb2QBb2wK0y4af3HZJdzvS2W2CdzZwropv0MlcfflEEQDpdplaAshrPRyBD8Kx/wjb4QamBEexbgH0A4d6d86gLvE7Kvm/8RU= hovo@contra100-pc"
+wordpress_pub_key  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0p7cMQuLBih7au46PWYTyHQOSO/EJLDXwh3uCU+HLhAQTwH3vTBSRvpQjS9bbnf4/PjAsbPhZHkHxb4QS8S2jxLnKX2qRWY5UOoZICunrPrRKjqHT+ENvjjIF8U5at9KHX6SvGKl16eQQa4cE28+XZYeCwfZaW1D0wrY4oi9E/ZhKboyATBsBlcUZzH+AxnwfU/5R5Jqp7LortwVuSaXUa6ATpB00f09mvfotQD4jjGOtco5rWWvm4yUvUTxmINBRgm6iaN+gE9jILyJ55HGl0LhDz/H4omnWShkbqGQcQujK1jHgmBnURYIspYoPrQTNIN+nbS4P7m05m/yr2C22+YnqkrNwAJOphUeAVdT0z9p78JHLahMHBR0Tn/jFjW2tj5lJjdT69hZxvylC1AlLpw8y5TdZ9opz3Est6zT1EFApgAk7gnRY/HGV+ZDuG8S0vv9aH2QzxWblxApxvnbleUX5jpjfs4+cv9VqrmBPJuzReODMgMmYXsShjejOeT0= root@jenkinsbdg"
