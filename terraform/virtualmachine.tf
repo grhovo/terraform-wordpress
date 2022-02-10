@@ -1,7 +1,7 @@
 
 resource "aws_elb" "wordpress_lb" {
   name            = "wordpress-lb"
-  subnets         = [aws_subnet.wordpress_subnets[0].id]
+  subnets         = [aws_subnet.wordpress_subnets[0].id,aws_subnet.wordpress_subnets[3].id]
   security_groups = [aws_security_group.for_lb.id]
 
   listener {
@@ -29,7 +29,7 @@ resource "aws_launch_template" "wordpress_lt" {
 }
 
 resource "aws_autoscaling_group" "wordpress_asg" {
-  vpc_zone_identifier = [aws_subnet.wordpress_subnets[0].id]
+  vpc_zone_identifier = [aws_subnet.wordpress_subnets[0].id, aws_subnet.wordpress_subnets[3].id]
   load_balancers      = [aws_elb.wordpress_lb.id]
   desired_capacity    = var.desired_capacity
   max_size            = var.max_size

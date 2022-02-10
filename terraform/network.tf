@@ -33,6 +33,11 @@ resource "aws_route_table_association" "prod-crta-public-subnet-1" {
   route_table_id = aws_route_table.wordpress_routetable.id
 }
 
+resource "aws_route_table_association" "prod-crta-public-subnet-2" {
+  subnet_id      = aws_subnet.wordpress_subnets[3].id
+  route_table_id = aws_route_table.wordpress_routetable.id
+}
+
 resource "aws_security_group" "for_instance" {
   name        = "Security group for instance"
   description = "Allow http from vpc and ssh from all world"
